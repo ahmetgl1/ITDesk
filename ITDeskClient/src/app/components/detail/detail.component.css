@@ -1,0 +1,89 @@
+/* styles.css */
+
+/* Mesaj balonları için genel düzenleme */
+.message-content {
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 70%;
+    display: inline-block;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Uzun mesajlar için kelime kaydırma */
+}
+
+/* Gönderilen mesajlar için arka plan rengi ve gölge */
+.chat-message-right .message-content {
+    background-color: #DCF8C6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+}
+
+/* Alınan mesajlar için arka plan rengi ve gölge */
+.chat-message-left .message-content {
+    background-color: #ECE5DD;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: auto;
+}
+
+/* Gönderilen mesajların genel container'ı */
+.chat-message-right {
+    text-align: right;
+}
+
+/* Alınan mesajların genel container'ı */
+.chat-message-left {
+    text-align: left;
+}
+
+/* Giriş kutusu için */
+.compose {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+
+.compose input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: #f5f5f5;
+}
+
+/* Gönder butonu için */
+.btn-primary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Temel stillendirme */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  /* Odaklandığında stil */
+  .form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  

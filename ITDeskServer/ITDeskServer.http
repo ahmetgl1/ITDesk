@@ -1,0 +1,6 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@ITDeskServer_HostAddress = http://localhost:7281
+
+GET {{ITDeskServer_HostAddress}}/weatherForecast/
+
+Accept: application/json

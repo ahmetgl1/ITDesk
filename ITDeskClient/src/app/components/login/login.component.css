@@ -1,0 +1,12 @@
+.justify-content-center{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.mt-2{
+ margin-top: 20px;
+}
+
+.ms-1{
+    margin-left: 2%;
+}

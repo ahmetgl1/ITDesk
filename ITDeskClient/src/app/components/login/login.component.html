@@ -1,0 +1,62 @@
+<p-toast [position]="'bottom-right'"></p-toast>
+
+<div class="card flex justify-content-center">
+    <p-card header="Giriş Sayfası" subheader="Giriş Yapabilmek İçin Bilgilerinizi Doldurun" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+        </ng-template>
+<!--username-->
+<div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+        </span>
+            <input pInputText   [(ngModel)]="this.request.userNameOrEmail" placeholder="Username or Email"/>
+    </div>
+
+<div class="p-inputgroup mt-2">
+    <span class="p-inputgroup-addon">
+        <i class="pi pi-lock"></i>
+    </span>
+    <p-password [(ngModel)]="this.request.password" [style]="{width: '100%'}">
+        <ng-template pTemplate="header">
+            <h6>Pick a password</h6>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-divider></p-divider>
+            <p class="mt-2">Suggestions</p>
+            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                <li>En az 1 büyük harf içermelidir</li>
+                <li>En az 1 küçük harf içermelidir</li>
+                <li>En az 1 rakam içermelidir</li>
+                <li>Minimum 5 karakter içermelidir</li>
+            </ul>
+        </ng-template>
+    </p-password>
+</div>
+</div>
+<div class="mt-2" style="display: flex; align-items: center;">
+     <p-checkbox [(ngModel)]="this.request.rememberMe" [binary]="true" inputId="ny"></p-checkbox>
+     <label for="ny" class="ms-1">Beni Hatırla  </label>
+</div>
+
+
+<!--username-->
+        <ng-template pTemplate="footer">
+
+            <!--social-media-->
+            <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button>
+<!--social-media-->
+
+
+
+
+     <!--buttonn-->
+<div class="card">
+    <p-button label="Giriş Yap" [rounded]="true" severity="help" [style]="{width: '100%' }" (onClick)="signIn()" ></p-button>
+</div>
+<!--buttonn-->
+        </ng-template>
+    </p-card>
+</div>

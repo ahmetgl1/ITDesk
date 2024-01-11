@@ -1,0 +1,66 @@
+<div class="container">
+    <h1 class="h3 mb-3">Messages</h1>
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-12 col-lg-12 col-xl-9">
+                <div class="card-header">
+                    <div class="d-flex align-items-center justify-content-between">
+                        
+                        @if (ticket.isOpen) {
+
+                            <div class="close-btn" style="float: right;">
+                                <p-button icon="pi pi-times" (onClick)="ChangeTicketStatus(ticketId)" [rounded]="true" [text]="true" [raised]="true" severity="danger "></p-button>
+                            </div>
+                           
+                        }
+                        @else {
+                            <div class="title" >
+                                <h3 style="color: red; display: flex; justify-content: center; align-items: center;">Ticket is Closed !</h3>       
+                            </div>
+                        }
+                      
+                        <div class="d-flex align-items-center py-1 justify-content-between">
+                            <h4> Owner :  {{ ticket.appUser.firstname }}  {{ ticket.appUser.lastName }}</h4>
+                            <h4> Subject: {{ ticket.subject }}</h4>
+                        </div>
+
+
+<!--file-->
+
+<div class="d-flex align-items-center py-1 justify-content-between">
+  
+    <ul>
+        <li>
+            <img src="" alt="" >
+        </li>
+    </ul>
+</div>
+
+<!--file-->
+
+                    </div>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages">
+                      
+                        <div *ngFor="let detail of details" class="pb-4" [ngClass]="auth.token.userId == detail.appUserId ? 'chat-message-left' : 'chat-message-right'">
+                            <div class="d-flex align-items-center">
+                                <p-avatar [label]="getAvatarLetter(detail.appUser.firstName)" styleClass="mr-2" size="large" shape="circle"></p-avatar>
+                                <div>
+                                    <div class="text-muted small text-nowrap">{{ detail.createdAt | date: 'dd.MM.yyyy' }}</div>
+                                    <div class="font-weight-bold">{{ detail.appUser.firstName }} {{ detail.appUser.lastName }}</div>
+                                </div>
+                            </div>
+                            <p style="word-break: break-all;">{{ detail.content }}</p>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <div class="compose">
+                    <input type="text" class="form-control" placeholder="Type your message">
+                    <button class="btn btn-primary" (click)="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+  
